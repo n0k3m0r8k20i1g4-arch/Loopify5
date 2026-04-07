@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Loopify</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- サイドバー -->
+  <div class="sidebar">
+    <h2>Loopify</h2>
+    <ul>
+      <li class="active" data-target="home">ホーム</li>
+      <li data-target="search">検索</li>
+      <li data-target="library">ライブラリ</li>
+    </ul>
+  </div>
+
+  <!-- メイン画面 -->
+  <div class="main">
+
+    <!-- ホーム画面 -->
+    <div id="home">
+      <h3>おすすめプレイリスト</h3>
+      <div class="playlist" id="playlistContainer"></div>
+    </div>
+
+    <!-- 検索画面 -->
+    <div id="search" class="hidden">
+      <h3>検索</h3>
+      <input type="text" id="searchInput" placeholder="曲名・アーティスト検索">
+      <div id="searchResults"></div>
+    </div>
+
+    <!-- ライブラリ画面 -->
+    <div id="library" class="hidden">
+      <h3>ライブラリ</h3>
+      <div id="libraryContainer"></div>
+    </div>
+
+    <!-- プレイヤー -->
+    <div class="player">
+      <div class="trackInfo">
+        <img id="currentArt" src="" alt="アルバムカバー">
+        <div id="currentTrack">再生中の曲なし</div>
+      </div>
+      <audio id="player" controls autoplay loop></audio>
+      <div class="controls">
+        <button id="prevTrack">⏮</button>
+        <button id="playPause">▶️</button>
+        <button id="nextTrack">⏭</button>
+        <button id="shuffle">🔀</button>
+        <button id="loop">🔁</button>
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
